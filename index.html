@@ -4,6 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>yetanother.one — Johannes Nagl</title>
+  <meta name="description" content="Indie projects by Johannes Nagl — co-CEO at Swat.io, dad by day, dev by night. Building apps from Vienna, one late night at a time.">
+  <link rel="canonical" href="https://yetanother.one/">
+  <meta name="theme-color" content="#F4F2EE">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="yetanother.one — Johannes Nagl">
+  <meta property="og:description" content="Indie projects by Johannes Nagl — co-CEO at Swat.io, dad by day, dev by night. Building apps from Vienna, one late night at a time.">
+  <meta property="og:url" content="https://yetanother.one/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="yetanother.one">
+
+  <!-- GEO -->
+  <meta name="geo.region" content="AT-9">
+  <meta name="geo.placename" content="Vienna, Austria">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -241,63 +258,90 @@
       <span class="domain">yetanother.one</span>
       <h1 class="headline">Dad by day,<br><em>dev by night.</em></h1>
       <p class="bio">
-        Hi, I'm Jolli — co-CEO at <a href="https://swat.io" target="_blank">Swat.io</a> 
-        and indie hacker building things I probably shouldn't be building at this hour. 
+        Hi, I'm Jolli — co-CEO at <a href="https://swat.io" target="_blank" rel="noopener">Swat.io</a>
+        and indie hacker building things I probably shouldn't be building at this hour.
         This is the graveyard and the launchpad. Sometimes both.
       </p>
     </header>
 
-    <hr class="divider">
+    <main>
+      <hr class="divider">
 
-    <p class="section-label">Projects — yet another list</p>
+      <h2 class="section-label">Projects — yet another list</h2>
 
-    <ul class="projects">
+      <div class="projects" role="list">
 
-      <a class="project" href="https://holdor.app" target="_blank">
-        <div class="project-left">
-          <div class="project-name">Holdor</div>
-          <div class="project-desc">Keeps your Mac awake while AI agents do their thing.<br>Built in one evening. Obviously.</div>
-        </div>
-        <div class="project-right">
-          <span class="tag live">Live</span>
-          <span class="project-year">2026</span>
-        </div>
-      </a>
+        <a class="project" href="https://holdor.app" target="_blank" rel="noopener" role="listitem">
+          <div class="project-left">
+            <div class="project-name">Holdor</div>
+            <div class="project-desc">Keeps your Mac awake while AI agents do their thing.<br>Built in one evening. Obviously.</div>
+          </div>
+          <div class="project-right">
+            <span class="tag live">Live</span>
+            <span class="project-year">2026</span>
+          </div>
+        </a>
 
-      <a class="project" href="https://showmd.app" target="_blank">
-        <div class="project-left">
-          <div class="project-name">showmd</div>
-          <div class="project-desc">A fast markdown viewer for macOS. Because raw .md files deserve better.</div>
-        </div>
-        <div class="project-right">
-          <span class="tag">In progress</span>
-          <span class="project-year">2026</span>
-        </div>
-      </a>
+        <a class="project" href="https://showmd.app" target="_blank" rel="noopener" role="listitem">
+          <div class="project-left">
+            <div class="project-name">showmd</div>
+            <div class="project-desc">A fast markdown viewer for macOS. Because raw .md files deserve better.</div>
+          </div>
+          <div class="project-right">
+            <span class="tag">In progress</span>
+            <span class="project-year">2026</span>
+          </div>
+        </a>
 
-      <a class="project" href="#" target="_blank">
-        <div class="project-left">
-          <div class="project-name">Your next project</div>
-          <div class="project-desc">I haven't built it yet but I've definitely thought about it at 1am.</div>
-        </div>
-        <div class="project-right">
-          <span class="tag">Soon™</span>
-          <span class="project-year">2026</span>
-        </div>
-      </a>
+        <span class="project" role="listitem" aria-disabled="true">
+          <div class="project-left">
+            <div class="project-name">Your next project</div>
+            <div class="project-desc">I haven't built it yet but I've definitely thought about it at 1am.</div>
+          </div>
+          <div class="project-right">
+            <span class="tag">Soon™</span>
+            <span class="project-year">2026</span>
+          </div>
+        </span>
 
-    </ul>
+      </div>
+    </main>
 
     <footer>
       <p class="footer-note">
         <em>yet another one</em> — made somewhere between bedtime and bad decisions.
       </p>
-      <nav class="social-links">
-        <a href="https://linkedin.com/in/johannesnagl" target="_blank">LinkedIn</a>
+      <nav class="social-links" aria-label="Social links">
+        <a href="https://linkedin.com/in/johannesnagl" target="_blank" rel="noopener">LinkedIn</a>
         <a href="mailto:hi@yetanother.one">hi@</a>
       </nav>
     </footer>
 
   </div>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Johannes Nagl",
+    "alternateName": "Jolli",
+    "url": "https://yetanother.one",
+    "jobTitle": "Co-CEO Product",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Swat.io",
+      "url": "https://swat.io"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vienna",
+      "addressCountry": "AT"
+    },
+    "sameAs": [
+      "https://linkedin.com/in/johannesnagl"
+    ]
+  }
+  </script>
 </body>
 </html>
