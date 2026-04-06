@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>yetanother.one — Johannes Nagl</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F4F2EE;
+      --ink: #1A1916;
+      --muted: #8C8A84;
+      --border: #DEDAD4;
+      --accent: #1A1916;
+      --tag-bg: #E8E5DF;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Mono', monospace;
+      font-weight: 300;
+      min-height: 100vh;
+      padding: 0 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 80px 0 120px;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 64px;
+    }
+
+    .domain {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 48px;
+      display: block;
+    }
+
+    .headline {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(36px, 6vw, 52px);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .headline em {
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .bio {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 480px;
+    }
+
+    .bio a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Divider */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+
+    /* Section label */
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    /* Project list */
+    .projects {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 24px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.15s;
+      cursor: pointer;
+    }
+
+    .project:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .project:hover { opacity: 0.6; }
+
+    .project-left { min-width: 0; }
+
+    .project-name {
+      font-family: 'Instrument Serif', serif;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .project-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .project-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      padding-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .tag {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--tag-bg);
+      color: var(--muted);
+      padding: 3px 8px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    .tag.live {
+      background: #1A1916;
+      color: #F4F2EE;
+    }
+
+    .project-year {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-note {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .footer-note em {
+      font-style: italic;
+      font-family: 'Instrument Serif', serif;
+      font-size: 14px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .social-links a {
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .social-links a:hover { color: var(--ink); }
+
+    /* Fade in */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    header   { animation: fadeUp 0.5s ease both; }
+    .divider { animation: fadeUp 0.5s ease 0.1s both; }
+    .projects .project:nth-child(1) { animation: fadeUp 0.4s ease 0.15s both; }
+    .projects .project:nth-child(2) { animation: fadeUp 0.4s ease 0.2s both; }
+    .projects .project:nth-child(3) { animation: fadeUp 0.4s ease 0.25s both; }
+    .projects .project:nth-child(4) { animation: fadeUp 0.4s ease 0.3s both; }
+    footer   { animation: fadeUp 0.4s ease 0.35s both; }
+
+    @media (max-width: 480px) {
+      .project {
+        grid-template-columns: 1fr;
+      }
+      .project-right {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <span class="domain">yetanother.one</span>
+      <h1 class="headline">Dad by day,<br><em>dev by night.</em></h1>
+      <p class="bio">
+        Hi, I'm Jolli — co-CEO at <a href="https://swat.io" target="_blank">Swat.io</a> 
+        and indie hacker building things I probably shouldn't be building at this hour. 
+        This is the graveyard and the launchpad. Sometimes both.
+      </p>
+    </header>
+
+    <hr class="divider">
+
+    <p class="section-label">Projects — yet another list</p>
+
+    <ul class="projects">
+
+      <a class="project" href="https://holdor.app" target="_blank">
+        <div class="project-left">
+          <div class="project-name">Holdor</div>
+          <div class="project-desc">Keeps your Mac awake while AI agents do their thing.<br>Built in one evening. Obviously.</div>
+        </div>
+        <div class="project-right">
+          <span class="tag live">Live</span>
+          <span class="project-year">2025</span>
+        </div>
+      </a>
+
+      <a class="project" href="https://showmd.app" target="_blank">
+        <div class="project-left">
+          <div class="project-name">showmd</div>
+          <div class="project-desc">A fast markdown viewer for macOS. Because raw .md files deserve better.</div>
+        </div>
+        <div class="project-right">
+          <span class="tag">In progress</span>
+          <span class="project-year">2025</span>
+        </div>
+      </a>
+
+      <a class="project" href="#" target="_blank">
+        <div class="project-left">
+          <div class="project-name">Your next project</div>
+          <div class="project-desc">I haven't built it yet but I've definitely thought about it at 1am.</div>
+        </div>
+        <div class="project-right">
+          <span class="tag">Soon™</span>
+          <span class="project-year">2026</span>
+        </div>
+      </a>
+
+    </ul>
+
+    <footer>
+      <p class="footer-note">
+        <em>yet another one</em> — made somewhere between bedtime and bad decisions.
+      </p>
+      <nav class="social-links">
+        <a href="https://linkedin.com/in/johannesnagl" target="_blank">LinkedIn</a>
+        <a href="https://bsky.app" target="_blank">Bluesky</a>
+        <a href="mailto:hi@yetanother.one">hi@</a>
+      </nav>
+    </footer>
+
+  </div>
+</body>
+</html>
