@@ -1,0 +1,19 @@
+# yetanother.one
+
+> Personal project hub of Johannes Nagl — co-CEO Product at Swat.io, based in Vienna, Austria.
+
+## About
+
+Johannes Nagl (aka Jolli) is a dad by day, dev by night. He builds indie apps and side projects in his spare time. This site serves as a launchpad and archive for those projects.
+
+## Projects
+
+- [Holdor](https://holdor.app): A free, open-source native macOS menu bar app that prevents system sleep while AI agents and coding tools are running. Built with Swift. MIT licensed. Live since 2026.
+- [showmd](https://showmd.app): A fast markdown viewer for macOS. In progress, 2026.
+
+## Contact
+
+- Website: https://yetanother.one
+- CV: https://johannes.nagl.name
+- LinkedIn: https://linkedin.com/in/johannesnagl
+- Email: hi@yetanother.one
