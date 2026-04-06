@@ -4,7 +4,7 @@
 
 ## About
 
-Johannes Nagl (aka Jolli) is a dad by day, dev by night. He builds indie apps and side projects in his spare time. This site serves as a launchpad and archive for those projects.
+Johannes Nagl is a dad by day, dev by night. He builds indie apps and side projects in his spare time. This site serves as a launchpad and archive for those projects.
 
 ## Projects
 
