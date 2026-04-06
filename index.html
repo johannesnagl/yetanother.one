@@ -57,6 +57,24 @@
     /* Header */
     header {
       margin-bottom: 64px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0 32px;
+    }
+
+    .header-text {
+      min-width: 0;
+    }
+
+    .avatar {
+      grid-row: 1 / -1;
+      grid-column: 2;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      align-self: center;
     }
 
     .domain {
@@ -241,6 +259,19 @@
     footer   { animation: fadeUp 0.4s ease 0.35s both; }
 
     @media (max-width: 480px) {
+      header {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+      }
+      .avatar {
+        grid-row: auto;
+        grid-column: auto;
+        margin-bottom: 24px;
+      }
+      .bio {
+        max-width: none;
+      }
       .project {
         grid-template-columns: 1fr;
       }
@@ -255,13 +286,16 @@
   <div class="container">
 
     <header>
-      <span class="domain">yetanother.one</span>
-      <h1 class="headline">Dad by day,<br><em>dev by night.</em></h1>
-      <p class="bio">
-        Hi, I'm Johannes — co-CEO at <a href="https://swat.io" target="_blank" rel="noopener">Swat.io</a>
-        and indie hacker building things I probably shouldn't be building at this hour.
-        This is the graveyard and the launchpad. Sometimes both.
-      </p>
+      <div class="header-text">
+        <span class="domain">yetanother.one</span>
+        <h1 class="headline">Dad by day,<br><em>dev by night.</em></h1>
+        <p class="bio">
+          Hi, I'm Johannes — co-CEO at <a href="https://swat.io" target="_blank" rel="noopener">Swat.io</a>
+          and indie hacker building things I probably shouldn't be building at this hour.
+          This is the graveyard and the launchpad. Sometimes both.
+        </p>
+      </div>
+      <img class="avatar" src="https://johannes.nagl.name/images/johannes-nagl.jpg" alt="Johannes Nagl" loading="lazy" width="96" height="96">
     </header>
 
     <main>
@@ -325,6 +359,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Johannes Nagl",
+    "image": "https://johannes.nagl.name/images/johannes-nagl.jpg",
     "url": "https://yetanother.one",
     "jobTitle": "Co-CEO Product",
     "worksFor": {
