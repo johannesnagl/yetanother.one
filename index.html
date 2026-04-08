@@ -6,7 +6,8 @@
   <title>yetanother.one — Johannes Nagl</title>
   <meta name="description" content="Indie projects by Johannes Nagl — co-CEO at Swat.io, dad by day, dev by night. Building apps from Vienna, one late night at a time.">
   <link rel="canonical" href="https://yetanother.one/">
-  <meta name="theme-color" content="#F4F2EE">
+  <meta name="theme-color" content="#F4F2EE" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1A1916" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
 
   <!-- Open Graph -->
@@ -31,6 +32,17 @@
       --border: #DEDAD4;
       --accent: #1A1916;
       --tag-bg: #E8E5DF;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1A1916;
+        --ink: #E0DDD5;
+        --muted: #9B9790;
+        --border: #2E2C28;
+        --accent: #E0DDD5;
+        --tag-bg: #2E2C28;
+      }
     }
 
     html { font-size: 16px; }
@@ -197,8 +209,8 @@
     }
 
     .tag.live {
-      background: #1A1916;
-      color: #F4F2EE;
+      background: var(--ink);
+      color: var(--bg);
     }
 
     .project-year {
