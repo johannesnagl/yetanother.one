@@ -41,7 +41,8 @@
         --muted: #9B9790;
         --border: #2E2C28;
         --accent: #E0DDD5;
-        --tag-bg: #2E2C28;
+        --tag-bg: #3D3A34;
+        --tag-color: #E0DDD5;
       }
     }
 
@@ -202,7 +203,7 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       background: var(--tag-bg);
-      color: var(--muted);
+      color: var(--tag-color, var(--muted));
       padding: 3px 8px;
       border-radius: 2px;
       white-space: nowrap;
