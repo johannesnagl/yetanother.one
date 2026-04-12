@@ -9,7 +9,7 @@ Johannes Nagl is a dad by day, dev by night. He builds indie apps and side proje
 ## Projects
 
 - [Holdor](https://holdor.yetanother.one): A free, open-source native macOS menu bar app that prevents system sleep while AI agents and coding tools are running. Built with Swift. MIT licensed. Live since 2026.
-- [showmd](https://showmd.yetanother.one): A fast markdown viewer for macOS. In progress, 2026.
+- [showmd](https://showmd.yetanother.one): A fast markdown viewer for macOS. Live since 2026.
 
 ## Contact
 
